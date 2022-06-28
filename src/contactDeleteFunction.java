@@ -23,11 +23,11 @@ public class contactDeleteFunction {
             List <String> contactsList = Files.readAllLines(filePath);
             for (int i = 0; i <= contactsList.size(); i++) {
                 if (Objects.equals(contactsList.get(i), delete)) {
-                    Files.readAllLines(filePath).remove(contactsList);
-                }else {
-                    Files.write(filePath, contactsList, StandardOpenOption.APPEND);
+                    contactsList.remove(contactsList.get(i));
                 }
             }
+            Files.write(filePath, contactsList);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
