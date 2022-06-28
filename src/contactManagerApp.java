@@ -1,7 +1,5 @@
-import jdk.dynalink.StandardOperation;
 import util.Input;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,8 +28,13 @@ public class contactManagerApp {
             Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
             lines.add(fullContact);
             contacts.add(new Contacts(person, digits));
-        }catch (IOException e) {
+        }   catch (IOException e) {
             e.printStackTrace();
+//            try {
+//                Files.createFile(filepath);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 }

@@ -10,6 +10,11 @@ public class Input {
         return this.scanner.nextLine();
     }
 
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        return this.scanner.nextLine();
+    }
+
     public boolean yesNo() {
         System.out.println("Enter Yes or No: (Y/N)");
         String resp = scanner.nextLine();
@@ -88,17 +93,17 @@ public class Input {
 //        Input call = new Input();
 //        System.out.println(call.yesNo());
 
-            Input minMax = new Input();
-            System.out.println(minMax.getInt(1,10));
-
-            Input favoriteNumber = new Input();
-            System.out.println(favoriteNumber.getInt());
-
-            Input doubleMinMax = new Input();
-            System.out.println(doubleMinMax.getDouble(1, 100));
-
-            Input favoriteDouble = new Input();
-            System.out.println(favoriteDouble.getDouble());
+//            Input minMax = new Input();
+//            System.out.println(minMax.getInt(1,10));
+//
+//            Input favoriteNumber = new Input();
+//            System.out.println(favoriteNumber.getInt());
+//
+//            Input doubleMinMax = new Input();
+//            System.out.println(doubleMinMax.getDouble(1, 100));
+//
+//            Input favoriteDouble = new Input();
+//            System.out.println(favoriteDouble.getDouble());
 
         }
     }
