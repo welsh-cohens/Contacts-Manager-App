@@ -8,7 +8,6 @@ import java.util.List;
 
 public class displayContacts {
     public static void main(String[] args) throws IOException {
-        Input in = new Input();
 
         Path contactsPath = Paths.get("data", "contacts-list.txt");
         List<String> contactsList = Files.readAllLines(contactsPath);
@@ -16,5 +15,6 @@ public class displayContacts {
         for (int i = 0; i < contactsList.size(); i += 1) {
             System.out.println((i + 1) + ": " + contactsList.get(i));
         }
+
     }
 }
