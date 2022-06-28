@@ -19,7 +19,7 @@ public class contactManagerApp {
         try {
             lines = Files.readAllLines(filepath);
             for (String line : lines) {
-                String[] splitStr = line.split("\\|");
+                String[] splitStr = line.split("/|");
                 contacts.add(new Contacts (splitStr[0], splitStr[1]));
             }
             String person = in.getString("Add Contact Name");
