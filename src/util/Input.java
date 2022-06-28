@@ -7,8 +7,7 @@ public class Input {
 
     public String getString() {
         System.out.println("Input string....");
-        String string = scanner.nextLine();
-        return string;
+        return this.scanner.nextLine();
     }
 
     public boolean yesNo() {

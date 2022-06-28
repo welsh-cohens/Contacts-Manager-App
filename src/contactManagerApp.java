@@ -30,8 +30,8 @@ public class contactManagerApp {
             Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
             lines.add(fullContact);
             contacts.add(new Contacts(person, digits));
-
-
+        }catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
