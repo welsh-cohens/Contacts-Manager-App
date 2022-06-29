@@ -42,7 +42,7 @@ public class mainInterface {
             }
             String person = in.getString("Add Contact Name");
             String digits = in.getString("Add dem digits");
-            String fullContact = String.format("%s | %s", person, digits);
+            String fullContact = String.format("%n%s | %s", person, digits);
             Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
             lines.add(fullContact);
             contacts.add(new Contacts(person, digits));
