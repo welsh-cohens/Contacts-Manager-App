@@ -17,17 +17,19 @@ public class contactDeleteFunction {
     public static void main(String[] args) throws IOException {
         Input in = new Input();
         Path filePath = Paths.get("data", "contacts-list.txt");
+        List <String> contactsList = Files.readAllLines(filePath);
+        List<String> updatedList = new ArrayList<>();
 
         try {
             String delete = in.getString("Who's contact do you want to delete?");
-            List <String> contactsList = Files.readAllLines(filePath);
-            for (int i = 0; i <= contactsList.size(); i++) {
-                if (Objects.equals(contactsList.get(i), delete)) {
-                    contactsList.remove(contactsList.get(i));
+            for (String line : contactsList) {
+                if (line.contains(delete)) {
+                    updatedList.add("");
+                    continue;
                 }
+                updatedList.add(line);
+                Files.write(filePath, updatedList);
             }
-            Files.write(filePath, contactsList);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
