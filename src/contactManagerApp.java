@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class contactManagerApp {
-    public void renderContacts() throws IOException {
+    public static void renderContacts() throws IOException {
         Path contactsPath = Paths.get("data", "contacts-list.txt");
         List<String> contactsList = Files.readAllLines(contactsPath);
         for (int i = 0; i < contactsList.size(); i += 1) {
@@ -44,5 +44,6 @@ public class contactManagerApp {
 //            }
         }
 
+        renderContacts();
     }
 }
