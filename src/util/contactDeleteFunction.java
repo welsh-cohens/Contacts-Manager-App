@@ -15,28 +15,28 @@ import java.util.Objects;
 import static java.nio.file.Files.lines;
 import static java.nio.file.Files.readAllLines;
 
-public class contactDeleteFunction {
-    public static void main(String[] args) throws IOException {
-        Input in = new Input();
-        Path filePath = Paths.get("data", "contacts-list.txt");
-        List <String> contactsList = Files.readAllLines(filePath);
-        System.out.println(contactsList);
-        List<String> updatedList = new ArrayList<>();
-
-        try {
-            String deletedName = in.getString("Who's contact do you want to delete?");
-            for (String line : contactsList) {
-                if (line.contains(deletedName)) {
-                    updatedList.add("");
-                    continue;
-                }
-                updatedList.add(line);
-                Files.write(filePath, updatedList);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-}
+//public class contactDeleteFunction {
+//    public static void main(String[] args) throws IOException {
+//        Input in = new Input();
+//        Path filePath = Paths.get("data", "contacts-list.txt");
+//        List <String> contactsList = Files.readAllLines(filePath);
+//        System.out.println(contactsList);
+//        List<String> updatedList = new ArrayList<>();
+//
+//        try {
+//            String deletedName = in.getString("Who's contact do you want to delete?");
+//            for (String line : contactsList) {
+//                if (line.contains(deletedName)) {
+//                    updatedList.add("");
+//                    continue;
+//                }
+//                updatedList.add(line);
+//                Files.write(filePath, updatedList);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//    }
+//}
