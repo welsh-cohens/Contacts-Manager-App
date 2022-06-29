@@ -18,12 +18,13 @@ public class contactDeleteFunction {
         Input in = new Input();
         Path filePath = Paths.get("data", "contacts-list.txt");
         List <String> contactsList = Files.readAllLines(filePath);
+        System.out.println(contactsList);
         List<String> updatedList = new ArrayList<>();
 
         try {
-            String delete = in.getString("Who's contact do you want to delete?");
+            String deletedName = in.getString("Who's contact do you want to delete?");
             for (String line : contactsList) {
-                if (line.contains(delete)) {
+                if (line.contains(deletedName)) {
                     updatedList.add("");
                     continue;
                 }

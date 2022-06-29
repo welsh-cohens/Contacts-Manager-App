@@ -6,7 +6,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        System.out.println("Input string....");
+        System.out.println();
         return this.scanner.nextLine();
     }
 
@@ -44,49 +44,49 @@ public class Input {
         }
     }
 
-        public Integer getInt () {
-            System.out.println("What is your favorite number?");
-            int favorite;
-            try {
-                favorite = Integer.valueOf(getString());
-                System.out.println("Your favorite number is: ");
-                return favorite;
-            } catch (NumberFormatException e) {
-                return getInt();
-            }
+    public Integer getInt() {
+        System.out.println("What is your favorite number?");
+        int favorite;
+        try {
+            favorite = Integer.valueOf(getString());
+            System.out.println("Your favorite number is: ");
+            return favorite;
+        } catch (NumberFormatException e) {
+            return getInt();
         }
+    }
 
-        public Double getDouble ( double min, double max){
-            System.out.printf("Give me a number between %.0f and %.0f.%n", min, max);
-            double input;
-            try {
-                input = Double.valueOf(getString());
-                if (input < min || input > max) {
-                    System.out.println("Sorry, wrong answer");
-                    return getDouble(min, max);
-                } else if (input >= min && input <= max) {
-                    System.out.println("Your number was: ");
-                }
-                return input;
-            } catch (NumberFormatException e) {
-                return getDouble();
+    public Double getDouble(double min, double max) {
+        System.out.printf("Give me a number between %.0f and %.0f.%n", min, max);
+        double input;
+        try {
+            input = Double.valueOf(getString());
+            if (input < min || input > max) {
+                System.out.println("Sorry, wrong answer");
+                return getDouble(min, max);
+            } else if (input >= min && input <= max) {
+                System.out.println("Your number was: ");
             }
+            return input;
+        } catch (NumberFormatException e) {
+            return getDouble();
         }
+    }
 
-        public Double getDouble () {
-            System.out.println("What is your favorite number?%n");
-            double favorite;
-            try {
-                favorite = Double.valueOf(getString());
-                System.out.println("Your favorite number is: ");
-                return favorite;
-            } catch (NumberFormatException e) {
-                return getDouble();
-            }
+    public Double getDouble() {
+        System.out.println("What is your favorite number?%n");
+        double favorite;
+        try {
+            favorite = Double.valueOf(getString());
+            System.out.println("Your favorite number is: ");
+            return favorite;
+        } catch (NumberFormatException e) {
+            return getDouble();
         }
+    }
 
 
-        public static void main (String[]args){
+    public static void main(String[] args) {
 //        Input name = new Input();
 //        System.out.println(name.getString());
 //
@@ -105,5 +105,5 @@ public class Input {
 //            Input favoriteDouble = new Input();
 //            System.out.println(favoriteDouble.getDouble());
 
-        }
     }
+}

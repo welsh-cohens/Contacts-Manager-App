@@ -20,7 +20,7 @@ public class contactManagerApp {
             lines = Files.readAllLines(filepath);
             for (String line : lines) {
                 String[] splitStr = line.split("/|");
-                contacts.add(new Contacts (splitStr[0], splitStr[1]));
+                contacts.add(new Contacts (splitStr[0], splitStr[0]));
             }
             String person = in.getString("Add Contact Name");
             String digits = in.getString("Add dem digits");
