@@ -3,10 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import util.*;
 
@@ -26,7 +23,7 @@ public class mainInterface {
             for (int i = 0; i < contactsList.size(); i += 1) {
                 System.out.println((i + 1) + ": " + contactsList.get(i));
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -49,7 +46,7 @@ public class mainInterface {
             Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
             lines.add(fullContact);
             contacts.add(new Contacts(person, digits));
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -60,7 +57,7 @@ public class mainInterface {
             List<String> contactsList = Files.readAllLines(filepath);
             String searchName = in.getString("Enter Name to Search");
             for (String line : contactsList) {
-                if (line.contains(searchName)) {
+                if (line.toLowerCase().contains(searchName.toLowerCase())) {
                     System.out.println(line);
                 }
             }
@@ -72,11 +69,11 @@ public class mainInterface {
     //Delete Contacts Method
     public static void deleteContacts() {
         try {
-            List <String> contactsList = Files.readAllLines(filepath);
+            List<String> contactsList = Files.readAllLines(filepath);
             List<String> updatedList = new ArrayList<>();
             String deletedName = in.getString("Who's contact do you want to delete?");
             for (String line : contactsList) {
-                if (line.contains(deletedName)) {
+                if (line.toLowerCase().contains(deletedName.toLowerCase())) {
                     updatedList.add("");
                     continue;
                 }
@@ -98,7 +95,7 @@ public class mainInterface {
                     System.out.println("1. Return to Menu");
                     int goBack1 = scanner.nextInt();
                     if (goBack1 == 1) {
-                       Interface();
+                        Interface();
                     }
                 case 2:
                     addContact();
