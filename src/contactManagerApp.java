@@ -16,25 +16,20 @@ public class contactManagerApp {
         List<String> lines;
         List<Contacts> contacts = new ArrayList<>();
         //Why did imported files correct error?
-        try {
-            lines = Files.readAllLines(filepath);
-            for (String line : lines) {
-                String[] splitStr = line.split("/|");
-                contacts.add(new Contacts (splitStr[0], splitStr[0]));
-            }
-            String person = in.getString("Add Contact Name");
-            String digits = in.getString("Add dem digits");
-            String fullContact = String.format("%s | %s", person, digits);
-            Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
-            lines.add(fullContact);
-            contacts.add(new Contacts(person, digits));
-        }   catch (IOException e) {
-            e.printStackTrace();
-//            try {
-//                Files.createFile(filepath);
-//            } catch (IOException e) {
-//                e.printStackTrace();
+//        try {
+//            lines = Files.readAllLines(filepath);
+//            for (String line : lines) {
+//                String[] splitStr = line.split("/|");
+//                contacts.add(new Contacts(splitStr[0], splitStr[0]));
 //            }
-        }
+//            String person = in.getString("Add Contact Name");
+//            String digits = in.getString("Add dem digits");
+//            String fullContact = String.format("%s | %s", person, digits);
+//            Files.write(filepath, Arrays.asList(fullContact), StandardOpenOption.APPEND);
+//            lines.add(fullContact);
+//            contacts.add(new Contacts(person, digits));
+//        }   catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

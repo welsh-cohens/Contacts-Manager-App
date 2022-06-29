@@ -1,3 +1,5 @@
+package util;
+
 import util.Input;
 
 import java.io.IOException;
