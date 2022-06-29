@@ -90,14 +90,42 @@ public class mainInterface {
 
     public static void Interface() throws IOException {
         System.out.println("1. View Contacts\n2. Add New Contact\n3. Search Contact By Name\n4. Delete Existing Contact\n5. Exit\nEnter An Option (1, 2, 3, 4, or 5:)");
-
-
+        int selection = scanner.nextInt();
+        while (selection != 5) {
+            switch (selection) {
+                case 1:
+                    displayContacts();
+                    System.out.println("1. Return to Menu");
+                    int goBack1 = scanner.nextInt();
+                    if (goBack1 == 1) {
+                       Interface();
+                    }
+                case 2:
+                    addContact();
+                    System.out.println("1. Return to Menu");
+                    int goBack2 = scanner.nextInt();
+                    if (goBack2 == 1) {
+                        Interface();
+                    }
+                case 3:
+                    searchContacts();
+                    System.out.println("1. Return to Menu");
+                    int goBack3 = scanner.nextInt();
+                    if (goBack3 == 1) {
+                        Interface();
+                    }
+                case 4:
+                    deleteContacts();
+                    System.out.println("1. Return to Menu");
+                    int goBack4 = scanner.nextInt();
+                    if (goBack4 == 1) {
+                        Interface();
+                    }
+            }
         }
+    }
 
     public static void main(String[] args) throws IOException {
         Interface();
-
-
-
     }
 }
